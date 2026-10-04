@@ -1,0 +1,10 @@
+# Personal data: backup files exported from the "התיק שלי" page
+welfare-backup-*.json
+*.backup.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

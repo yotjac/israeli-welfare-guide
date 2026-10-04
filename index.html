@@ -1,0 +1,904 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>המדריך הפיננסי לאזרח בישראל</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F6F7F5; --card:#FFFFFF; --ink:#14233A; --ink-2:#4A5568; --ink-3:#7A8494;
+  --line:#DCE0DA; --green:#1F6B52; --green-bg:#E3F0EA; --blue:#2B5A8C; --blue-bg:#E4ECF5;
+  --ochre:#8A5A12; --ochre-bg:#F7EDDA; --plum:#5B3F7A; --plum-bg:#EEE8F4; --red:#9B2C2C; --red-bg:#F8E4E2;
+  --serif:"Frank Ruhl Libre", "David", "Times New Roman", serif;
+  --sans:"Assistant", "Arial Hebrew", "Segoe UI", Arial, sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#11161E; --card:#18202B; --ink:#E8ECF1; --ink-2:#B3BCC8; --ink-3:#8590A0;
+    --line:#2A3442; --green:#6FC3A0; --green-bg:#16302A; --blue:#8DB7E6; --blue-bg:#18283B;
+    --ochre:#E2B566; --ochre-bg:#33280F; --plum:#C4A9E3; --plum-bg:#2A2236; --red:#F0A09A; --red-bg:#3A1C1C;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#11161E; --card:#18202B; --ink:#E8ECF1; --ink-2:#B3BCC8; --ink-3:#8590A0;
+  --line:#2A3442; --green:#6FC3A0; --green-bg:#16302A; --blue:#8DB7E6; --blue-bg:#18283B;
+  --ochre:#E2B566; --ochre-bg:#33280F; --plum:#C4A9E3; --plum-bg:#2A2236; --red:#F0A09A; --red-bg:#3A1C1C;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+html,body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.7}
+img{max-width:100%}
+a{color:var(--blue)}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:4px}
+.layout{display:grid;grid-template-columns:260px minmax(0,1fr);min-height:100vh}
+nav.side{border-left:1px solid var(--line);padding:28px 20px;position:sticky;top:env(safe-area-inset-top,0px);height:100vh;overflow-y:auto}
+.brand{font-family:var(--serif);font-size:22px;font-weight:700;line-height:1.25;margin:0 0 4px;text-decoration:none;color:var(--ink);display:block}
+.brand-sub{font-size:14px;color:var(--ink-3);margin:0 0 24px}
+nav.side ul{list-style:none;margin:0;padding:0}
+nav.side a.nl{display:flex;gap:10px;align-items:center;padding:9px 12px;border-radius:8px;text-decoration:none;color:var(--ink-2);font-size:16px}
+nav.side a.nl:hover{background:var(--card);color:var(--ink)}
+nav.side a.nl.on{background:var(--card);color:var(--ink);font-weight:700;box-shadow:inset -3px 0 0 var(--green)}
+.dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+main{padding:48px 56px 80px;max-width:860px}
+h1{font-family:var(--serif);font-weight:700;font-size:44px;line-height:1.15;margin:0 0 14px;letter-spacing:-.01em}
+h2{font-family:var(--serif);font-weight:700;font-size:28px;line-height:1.25;margin:48px 0 12px}
+h3{font-size:19px;font-weight:700;margin:0 0 6px}
+.lede{font-size:20px;color:var(--ink-2);max-width:62ch;margin:0 0 32px}
+p{max-width:68ch;margin:0 0 14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin:0 0 14px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.facts{list-style:none;padding:0;margin:10px 0 0}
+.facts li{padding:8px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:140px 1fr;gap:12px;font-size:16px}
+.facts li:first-child{border-top:0}
+.facts b{color:var(--ink-3);font-weight:600;font-size:15px}
+.pill{display:inline-block;font-size:14px;font-weight:600;padding:2px 12px;border-radius:999px;margin-bottom:8px}
+.p-green{background:var(--green-bg);color:var(--green)} .p-blue{background:var(--blue-bg);color:var(--blue)}
+.p-ochre{background:var(--ochre-bg);color:var(--ochre)} .p-plum{background:var(--plum-bg);color:var(--plum)}
+.p-red{background:var(--red-bg);color:var(--red)}
+.warn{border-right:4px solid var(--ochre);background:var(--ochre-bg);padding:14px 18px;margin:18px 0;border-radius:0}
+.warn strong{color:var(--ochre)}
+.tip{border-right:4px solid var(--green);background:var(--green-bg);padding:14px 18px;margin:18px 0;border-radius:0}
+.tip strong{color:var(--green)}
+.split{display:flex;height:56px;border-radius:10px;overflow:hidden;margin:10px 0 8px;font-weight:600;font-size:15px}
+.split div{display:flex;align-items:center;justify-content:center;text-align:center;line-height:1.2;padding:0 6px}
+.timeline{position:relative;margin:28px 0 8px;padding-right:28px}
+.timeline::before{content:"";position:absolute;right:8px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tl{position:relative;margin:0 0 22px}
+.tl::before{content:"";position:absolute;right:-26px;top:9px;width:14px;height:14px;border-radius:50%;background:var(--paper);border:3px solid var(--green)}
+.tl .age{font-family:var(--serif);font-size:26px;font-weight:700;line-height:1;display:inline-block;min-width:64px}
+.tl .what{font-weight:700}
+.tl .links{font-size:15px;color:var(--ink-2)}
+.tl .links a{margin-left:8px}
+.calc{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:14px 0}
+.calc label{display:block;font-size:15px;color:var(--ink-2);margin-bottom:4px}
+.calc input[type=range]{width:100%;accent-color:var(--green)}
+.calc output{font-weight:700;font-size:17px}
+.calc select,.calc input[type=number]{width:100%;font:inherit;font-size:16px;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink)}
+.result{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:10px}
+.result div{background:var(--paper);border-radius:10px;padding:14px 16px}
+.result .k{font-size:14px;color:var(--ink-3)}
+.result .v{font-family:var(--serif);font-size:28px;font-weight:700;line-height:1.2}
+.result .bad{color:var(--ochre)}
+.verdict{margin-top:12px;padding:14px 16px;border-radius:10px;font-size:16px}
+.verdict.good{background:var(--green-bg);color:var(--green)}
+.verdict.ok{background:var(--ochre-bg);color:var(--ochre)}
+.verdict.high{background:var(--red-bg);color:var(--red)}
+.verdict b{display:block;font-size:18px}
+.ck{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-top:1px solid var(--line);cursor:pointer}
+.ck input{width:20px;height:20px;margin-top:4px;accent-color:var(--green);flex-shrink:0}
+.ck .d{font-size:15px;color:var(--ink-2)}
+.ck.done .t{text-decoration:line-through;color:var(--ink-3)}
+.bar{height:8px;background:var(--line);border-radius:4px;overflow:hidden;margin:8px 0 4px}
+.bar span{display:block;height:100%;background:var(--green);transition:width .3s}
+.table-wrap{overflow-x:auto;margin:14px 0}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:16px;background:var(--card);border-radius:12px;overflow:hidden}
+th,td{text-align:right;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:700;background:var(--paper);font-size:15px;color:var(--ink-2)}
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:56px;padding-top:20px;border-top:1px solid var(--line)}
+.pager a{text-decoration:none;font-weight:600}
+.disclaimer{font-size:14px;color:var(--ink-3);margin-top:28px;max-width:68ch}
+.toolcard a.big{font-weight:700;font-size:18px;text-decoration:none}
+.page{display:none}
+.page.on{display:block}
+.topnav{display:none}
+/* advisor steps */
+.steps{counter-reset:st;margin:24px 0 0}
+.step{position:relative;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px 18px 24px;padding-right:72px;margin:0 0 14px}
+.step::before{counter-increment:st;content:counter(st);position:absolute;right:20px;top:20px;width:36px;height:36px;border-radius:50%;background:var(--ink);color:var(--paper);font-family:var(--serif);font-weight:700;font-size:19px;display:flex;align-items:center;justify-content:center}
+.step h3{font-size:21px;font-family:var(--serif)}
+.step .q{font-size:15px;color:var(--ink-3);margin:-2px 0 10px}
+.step ul{margin:6px 0 10px;padding-right:20px}
+.step li{margin:0 0 6px}
+.flags{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:10px}
+.flags div{font-size:15px;padding:10px 12px;border-radius:8px}
+.flags .g{background:var(--green-bg)} .flags .r{background:var(--red-bg)}
+.flags b{display:block;font-size:13px;letter-spacing:.02em;margin-bottom:2px}
+.flags .g b{color:var(--green)} .flags .r b{color:var(--red)}
+.mini{font-size:15px;color:var(--ink-2)}
+/* my accounts */
+.btn{font:inherit;font-size:15px;font-weight:600;padding:9px 18px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.btn:hover{border-color:var(--ink-3)}
+.btn.pri{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn.sm{font-size:14px;padding:5px 12px}
+.btn.danger{color:var(--red)}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:14px 0 0}
+.form{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px 16px}
+.form label{display:block;font-size:14px;font-weight:600;color:var(--ink-2);margin-bottom:4px}
+.form input,.form select,.form textarea{width:100%;font:inherit;font-size:16px;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink)}
+.form textarea{min-height:64px;resize:vertical}
+.form .wide{grid-column:1/-1}
+.form .hint{font-size:13px;color:var(--ink-3);font-weight:400}
+.acct{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 16px;align-items:start}
+.acct h3{margin:0}
+.acct .meta{font-size:15px;color:var(--ink-2)}
+.acct .meta span{white-space:nowrap}
+.acct .meta span+span::before{content:" · ";color:var(--ink-3)}
+.acct .todo{grid-column:1/-1;font-size:15px;background:var(--ochre-bg);color:var(--ochre);padding:6px 12px;border-radius:8px}
+.acct .act{display:flex;gap:8px}
+.st{display:inline-block;font-size:13px;font-weight:600;padding:1px 10px;border-radius:999px;margin-inline-start:8px;vertical-align:2px}
+.st.active{background:var(--green-bg);color:var(--green)} .st.inactive{background:var(--ochre-bg);color:var(--ochre)} .st.frozen{background:var(--blue-bg);color:var(--blue)} .st.closed{background:var(--line);color:var(--ink-2)}
+.empty{text-align:center;color:var(--ink-3);padding:32px 16px;border:1px dashed var(--line);border-radius:14px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:8px 0 0}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.kpi .k{font-size:14px;color:var(--ink-3)}
+.kpi .v{font-family:var(--serif);font-size:30px;font-weight:700;line-height:1.2;font-variant-numeric:tabular-nums}
+.kpi .s{font-size:14px;color:var(--ink-2)}
+.hbars{margin:6px 0 0}
+.hb{display:grid;grid-template-columns:150px minmax(0,1fr) 120px;gap:12px;align-items:center;padding:6px 0;position:relative}
+.hb .lab{font-size:15px}
+.hb .track{height:14px}
+.hb .fill{height:100%;background:var(--green);border-radius:0 4px 4px 0;min-width:2px}
+.hb .num{font-size:15px;font-weight:600;font-variant-numeric:tabular-nums;text-align:left}
+.hb:hover .fill{filter:brightness(1.1)}
+.hb .tipx{display:none;position:absolute;top:-30px;right:160px;background:var(--ink);color:var(--paper);font-size:13px;padding:3px 10px;border-radius:6px;white-space:nowrap;z-index:2}
+.hb:hover .tipx{display:block}
+.alert{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border-radius:10px;margin:0 0 8px;font-size:16px}
+.alert .ic{flex-shrink:0;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;margin-top:2px}
+.alert .lv{font-size:13px;font-weight:700;display:block}
+.alert.high{background:var(--red-bg)} .alert.high .ic{background:var(--red);color:var(--card)} .alert.high .lv{color:var(--red)}
+.alert.mid{background:var(--ochre-bg)} .alert.mid .ic{background:var(--ochre);color:var(--card)} .alert.mid .lv{color:var(--ochre)}
+.alert.ok{background:var(--green-bg)} .alert.ok .ic{background:var(--green);color:var(--card)} .alert.ok .lv{color:var(--green)}
+.fee-g{color:var(--green);font-weight:600} .fee-o{color:var(--ochre);font-weight:600} .fee-h{color:var(--red);font-weight:600}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+@media print{
+  nav.side,.topnav,.pager,.noprint{display:none!important}
+  .layout{display:block} main{padding:0;max-width:none}
+  .page{display:none!important} .page.on{display:block!important}
+  body{background:#fff}
+}
+@media (max-width:880px){
+  .layout{grid-template-columns:1fr}
+  nav.side{display:none}
+  .topnav{display:block;position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1px solid var(--line);padding:12px 18px;padding-top:calc(12px + env(safe-area-inset-top,0px))}
+  .topnav .brand{font-size:18px;margin-bottom:8px}
+  .topnav .scroll{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px}
+  .topnav a{white-space:nowrap;text-decoration:none;color:var(--ink-2);font-size:15px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;background:var(--card)}
+  .topnav a.on{color:var(--paper);background:var(--ink);border-color:var(--ink)}
+  main{padding:28px 16px 64px}
+  h1{font-size:32px}
+  .lede{font-size:18px}
+  .facts li{grid-template-columns:1fr;gap:0}
+  .step{padding:18px 18px 14px;padding-right:62px}
+  .step::before{right:14px;top:16px;width:32px;height:32px;font-size:17px}
+  .acct{grid-template-columns:1fr}
+  .hb{grid-template-columns:100px minmax(0,1fr) 90px;gap:8px}
+  .hb .tipx{right:0}
+}
+@media (prefers-reduced-motion:reduce){.bar span{transition:none}}
+</style>
+</head>
+<body>
+<div class="topnav" id="topnav"></div>
+<div class="layout">
+<nav class="side" aria-label="ניווט ראשי">
+  <a class="brand" href="#home">המדריך הפיננסי לאזרח</a>
+  <p class="brand-sub">איך מנהלים את החסכונות והביטוחים, כמו שיועץ פנסיוני היה עושה</p>
+  <ul id="sidenav"></ul>
+</nav>
+<main id="main">
+
+<!-- HOME -->
+<section class="page" id="p-home" data-title="ראשי" data-color="var(--ink)">
+  <h1>הכסף שלך לאורך החיים, במקום אחד</h1>
+  <p class="lede">פנסיה, קרן השתלמות, קופות גמל, ביטוחים וביטוח לאומי. מה חובה, מה כדאי, איך בודקים את התיק פעם בשנה, ואיפה אנשים מפסידים כסף בלי לשים לב.</p>
+
+  <div class="card" style="border-color:var(--green)">
+    <span class="pill p-green">מתחילים כאן</span>
+    <h3>הבדיקה השנתית של יועץ פנסיוני, בשמונה שלבים</h3>
+    <p style="margin:0 0 8px">אותו תהליך שיועץ מריץ כשאתה מגיע לפגישה: ממפים את כל הקופות, בודקים שההפקדות נכונות, דמי ניהול, מסלולים, כיסויים, איחוד ומוטבים.</p>
+    <a href="#review" style="font-weight:700">לתהליך הבדיקה</a>
+  </div>
+  <div class="card" style="border-color:var(--plum)">
+    <span class="pill p-plum">הנתונים שלך</span>
+    <h3>התיק שלי וסיכום התיק</h3>
+    <p style="margin:0 0 8px">רושמים כל קופה וביטוח עם הסטטוס שלהם, ומקבלים סיכום: כמה חסכת, כמה אתה משלם, ומה דורש טיפול. נשמר רק במחשב הזה.</p>
+    <a href="#mine" style="font-weight:700">לתיק שלי</a> · <a href="#summary" style="font-weight:700">לסיכום</a>
+  </div>
+
+  <h2>לאן הולך הכסף מהמשכורת</h2>
+  <p>כל שכיר בישראל מופרש לו כסף לפנסיה מדי חודש. זה המינימום שקבוע בחוק, באחוזים מהשכר:</p>
+  <div class="split" role="img" aria-label="עובד 6 אחוז, מעסיק 6.5 אחוז, פיצויים 6 אחוז">
+    <div style="flex:6;background:var(--blue-bg);color:var(--blue)">עובד<br>6%</div>
+    <div style="flex:6.5;background:var(--green-bg);color:var(--green)">מעסיק<br>6.5%</div>
+    <div style="flex:6;background:var(--plum-bg);color:var(--plum)">פיצויים<br>6%</div>
+  </div>
+  <p style="font-size:15px;color:var(--ink-2)">סה"כ 18.5% מהשכר. בחלק ממקומות העבודה הפיצויים הם 8.33%, ואז הסה"כ הוא 20.83%. קרן השתלמות, אם יש, מגיעה מעבר לזה.</p>
+
+  <h2>מה רלוונטי מתי</h2>
+  <div class="timeline">
+    <div class="tl"><span class="age">18</span> <span class="what">חובת ביטוח לאומי מתחילה</span><div class="links">גם לסטודנטים ולמי שלא עובד. <a href="#gov">ביטוח לאומי ומיסים</a></div></div>
+    <div class="tl"><span class="age">עבודה</span> <span class="what">פנסיה, השתלמות, בחירת מסלול</span><div class="links">ההחלטות שהכי משפיעות על הפרישה. <a href="#pension">פנסיה</a><a href="#savings">השתלמות וגמל</a></div></div>
+    <div class="tl"><span class="age">משפחה</span> <span class="what">ביטוח חיים, מוטבים, חיסכון לכל ילד</span><div class="links">כשיש מישהו שתלוי בך. <a href="#life">חיים ואובדן כושר</a></div></div>
+    <div class="tl"><span class="age">דירה</span> <span class="what">ביטוח משכנתא ומבנה</span><div class="links">חובה, אבל לא חייבים דרך הבנק. <a href="#life">חיים ואובדן כושר</a></div></div>
+    <div class="tl"><span class="age">60</span> <span class="what">גמל להשקעה יכולה להפוך לקצבה פטורה</span><div class="links"><a href="#savings">השתלמות וגמל</a></div></div>
+    <div class="tl"><span class="age">67</span> <span class="what">גיל פרישה (לגברים; לנשים עולה בהדרגה ל-65)</span><div class="links">כאן הכסף מהפנסיה הופך לקצבה חודשית.</div></div>
+  </div>
+
+  <h2>שלושה דברים לעשות השבוע</h2>
+  <div class="grid2">
+    <div class="card"><span class="pill p-green">20 דקות</span><h3>להיכנס למסלקה הפנסיונית</h3><p style="margin:0">לראות את כל הקופות, הצבירות ודמי הניהול שלך.</p></div>
+    <div class="card"><span class="pill p-blue">10 דקות</span><h3>להיכנס להר הביטוח</h3><p style="margin:0">לחפש ביטוחים כפולים שאתה משלם עליהם פעמיים.</p></div>
+    <div class="card"><span class="pill p-ochre">10 דקות</span><h3>לבדוק את הר הכסף</h3><p style="margin:0">אולי יש לך כסף שנשכח בקופה ישנה.</p></div>
+  </div>
+  <p><a href="#tools">לקישורים לכל הכלים</a></p>
+</section>
+
+<!-- REVIEW (advisor process) -->
+<section class="page" id="p-review" data-title="הבדיקה השנתית" data-color="var(--green)">
+  <span class="pill p-green">כמו פגישה עם יועץ פנסיוני</span>
+  <h1>איך יועץ בודק את התיק שלך</h1>
+  <p class="lede">יועץ טוב לא מתחיל ממוצר. הוא מתחיל מתמונה מלאה של מה שיש לך, בודק שכל שקל מגיע למקום הנכון ובמחיר הנכון, ורק אז ממליץ על שינוי. אפשר לעשות את רוב התהליך לבד, בערב אחד.</p>
+
+  <div class="steps">
+
+    <div class="step">
+      <h3>מיפוי: לאסוף את כל החומר</h3>
+      <p class="q">מה יש לי, ואיפה?</p>
+      <ul>
+        <li><b>קובץ המסלקה הפנסיונית</b>: כל קופות הפנסיה, ההשתלמות, הגמל וביטוחי המנהלים, כולל ישנות.</li>
+        <li><b>דוח הר הביטוח</b>: כל פוליסות הבריאות, החיים, הסיעוד והתאונות.</li>
+        <li><b>שלושה תלושי שכר אחרונים</b>: כדי לראות מה באמת מופרש.</li>
+        <li><b>הדוח השנתי</b> מכל קופה פעילה: מגיע בכל שנה בדואר או באזור האישי.</li>
+      </ul>
+      <p class="mini" style="margin:0">יועץ ייבקש ממך לחתום על ייפוי כוח כדי למשוך את המידע הזה. אתה יכול להוציא את אותו המידע בעצמך, בחינם. <a href="#tools">לכלים</a></p>
+    </div>
+
+    <div class="step">
+      <h3>ההפקדות: לוודא שהמעסיק מפקיד נכון</h3>
+      <p class="q">האם הכסף שבתלוש באמת הגיע לקופה?</p>
+      <ul>
+        <li>להשוות את האחוזים בתלוש לאחוזים בדוח: עובד, מעסיק ופיצויים.</li>
+        <li>לבדוק את <b>השכר המבוטח</b>: ההפרשה צריכה להיות על השכר הקבוע, לא רק על שכר הבסיס. אם בדוח רשום שכר נמוך בהרבה מהתלוש, זה סימן לשאול.</li>
+        <li>לחפש חודשים חסרים: חודש בלי הפקדה בדוח, כשבתלוש ירד ניכוי.</li>
+        <li>קרן השתלמות: לוודא שהאחוז תואם להסכם העבודה.</li>
+      </ul>
+      <div class="flags">
+        <div class="g"><b>תקין</b>הפקדה בכל חודש, על השכר המלא, באחוזים שבתלוש.</div>
+        <div class="r"><b>לבדוק מול המעסיק</b>חודשים חסרים, שכר מבוטח נמוך, או פיצויים שלא הופרשו.</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <h3>דמי ניהול: להשוות למה שאפשר לקבל</h3>
+      <p class="q">כמה אני משלם, וזה הרבה או מעט?</p>
+      <p>דמי הניהול מופיעים בדוח השנתי ובמסלקה. זה הפרמטר היחיד שאתה בטוח שמשפיע על הכסף, כי תשואה עתידית אף אחד לא יודע. בדוק כל קופה בנפרד:</p>
+      <div class="card" style="background:var(--paper);margin:10px 0 6px">
+        <h3 style="font-size:18px;font-family:var(--sans)">בודק דמי ניהול</h3>
+        <div class="calc">
+          <div><label for="ft">סוג המוצר</label><select id="ft"><option value="pension">קרן פנסיה</option><option value="gemel">קרן השתלמות / קופת גמל</option><option value="exec">ביטוח מנהלים</option></select></div>
+          <div><label for="fd">מההפקדה (%)</label><input id="fd" type="number" min="0" max="6" step="0.05" value="1.5"></div>
+          <div><label for="fa">מהצבירה (%)</label><input id="fa" type="number" min="0" max="2" step="0.01" value="0.22"></div>
+        </div>
+        <div id="fverdict" class="verdict" aria-live="polite"></div>
+        <p class="mini" style="margin:10px 0 0">אמות המידה הן הערכה כללית לפי מה שמקובל בשוק ובקרנות ברירת המחדל, לא נתון רשמי. לחישוב ההשפעה בשקלים, ראו <a href="#pension">את המחשבון בעמוד הפנסיה</a>.</p>
+      </div>
+      <div class="tip" style="margin-bottom:0"><strong>איך מורידים.</strong> שיחה אחת לקרן, עם הצעה ממקום אחר ביד. אם הם לא מורידים, אפשר לנייד את הכסף לקרן אחרת. הניוד בחינם ולא נחשב משיכה, ולכן אין עליו מס.</div>
+    </div>
+
+    <div class="step">
+      <h3>מסלולי השקעה: להסתכל על כל התיק יחד</h3>
+      <p class="q">כמה סיכון יש לי בסך הכול, וזה מתאים לי?</p>
+      <ul>
+        <li>לרשום ליד כל קופה את המסלול שלה: לפי גיל, כללי, מנייתי, מחקה מדד, אג"ח וכו'.</li>
+        <li>יועץ מסתכל על <b>התמהיל הכולל</b>: אם הפנסיה במסלול לפי גיל, ההשתלמות במסלול כללי והגמל במניות, כמה מכל הכסף שלך מושקע במניות?</li>
+        <li>טווח הזמן קובע: כסף לפרישה בעוד 30 שנה יכול לשאת יותר תנודות מכסף שתצטרך בעוד שנתיים.</li>
+        <li>השוואת תשואות: על פני 5 שנים לפחות, ומול מסלולים דומים בלבד, בגמל נט ופנסיה נט.</li>
+      </ul>
+      <div class="warn" style="margin-bottom:0"><strong>לא לרדוף אחרי התשואה של השנה שעברה.</strong> המעבר אחרי ירידות הוא הדרך הכי נפוצה למכור בזול. שינוי מסלול צריך לנבוע משינוי במצב שלך, לא בשוק.</div>
+    </div>
+
+    <div class="step">
+      <h3>כיסוי ביטוחי: לא חסר ולא כפול</h3>
+      <p class="q">מה קורה אם לא אוכל לעבוד, או אם אמות?</p>
+      <ul>
+        <li><b>מסלול הביטוח בקרן הפנסיה</b>: הקרן מאפשרת לבחור מסלול עם יותר כיסוי נכות ושארים או פחות. כל שקל לביטוח הוא שקל שלא נחסך, ולכן המסלול צריך להתאים למצב המשפחתי.</li>
+        <li><b>רווקים בלי ילדים</b> יכולים לבקש לוותר על כיסוי שארים לתקופה מוגבלת, ולחסוך יותר. צריך לחדש את הוויתור מדי פעם ולבטל אותו כשמתחתנים.</li>
+        <li><b>אובדן כושר עבודה</b>: לבדוק כמה כבר מכוסה בפנסיה לפני שקונים פוליסה פרטית. שני כיסויים לרוב לא משלמים פעמיים את מלוא הסכום.</li>
+        <li><b>ביטוחי בריאות וחיים</b>: לעבור על הר הביטוח ולחפש כפילויות. <a href="#health">בריאות</a> · <a href="#life">חיים ואובדן כושר</a></li>
+      </ul>
+      <div class="flags">
+        <div class="g"><b>תקין</b>כיסוי שמתאים למי שתלוי בך, ממקור אחד מרכזי.</div>
+        <div class="r"><b>לבדוק</b>תלויים בלי ביטוח חיים, או אותו כיסוי בשלוש פוליסות.</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <h3>איחוד וניוד: פחות קופות, פחות דמי ניהול</h3>
+      <p class="q">האם יש קופות ישנות שאין סיבה להשאיר?</p>
+      <ul>
+        <li>קרנות פנסיה לא פעילות מעבודות קודמות: לרוב כדאי לאחד אותן לתוך הקרן הפעילה.</li>
+        <li>קרנות השתלמות ישנות: אפשר לאחד, וותק הקרן נשמר.</li>
+        <li>הניוד נעשה בבקשה לגוף המקבל, בלי עלות ובלי אירוע מס.</li>
+      </ul>
+      <div class="warn" style="margin-bottom:0"><strong>חריג חשוב: ביטוח מנהלים ישן.</strong> פוליסות מלפני 2013 כוללות לעיתים מקדם קצבה מובטח, ששווה הרבה כסף בפרישה. לא מאחדים ולא סוגרים אותן לפני בדיקה. <a href="#pension">פרטים</a></div>
+    </div>
+
+    <div class="step">
+      <h3>מוטבים ומסמכים: לוודא שהכסף יגיע למי שצריך</h3>
+      <p class="q">אם יקרה משהו, מי מקבל?</p>
+      <ul>
+        <li>בכל קופה ובכל ביטוח חיים יש רשימת מוטבים נפרדת. היא גוברת על הצוואה.</li>
+        <li>לעדכן אחרי חתונה, גירושין, לידה או פטירה במשפחה.</li>
+        <li>לשמור במקום אחד רשימה של כל הקופות והפוליסות, ולספר לבן/בת הזוג איפה היא.</li>
+      </ul>
+    </div>
+
+    <div class="step">
+      <h3>סיכום: תוכנית פעולה בכתב</h3>
+      <p class="q">מה בדיוק משנים, ולמה?</p>
+      <p>בסוף פגישה, יועץ פנסיוני מחויב לתת לך <b>מסמך הנמקה</b>: מה המליץ, למה, ומה החלופות. כשעושים את זה לבד, כדאי לרשום את אותו הדבר: רשימה קצרה של שינויים, עם תאריך יעד לכל אחד.</p>
+      <p style="margin:0">אחרי שהשינויים בוצעו, לבדוק בעוד חודשיים בדוח או במסלקה שהם באמת נכנסו לתוקף. <a href="#check">לצ'קליסט השנתי</a></p>
+    </div>
+
+  </div>
+
+  <h2>מתי בכל זאת כדאי יועץ</h2>
+  <div class="grid2">
+    <div class="card"><h3>לקראת פרישה</h3><p style="margin:0">בחירת מסלול קצבה, היוון, פריסת פיצויים וקיבוע זכויות. אלה החלטות חד-פעמיות עם השלכות מס גדולות.</p></div>
+    <div class="card"><h3>מעבר לעצמאות</h3><p style="margin:0">כמה להפקיד כדי למקסם את הטבות המס, ואיך לשמור על הכיסוי הביטוחי.</p></div>
+    <div class="card"><h3>פוליסות ישנות</h3><p style="margin:0">כשיש ביטוח מנהלים ישן ולא ברור אם כדאי להשאיר, להקפיא או לנייד.</p></div>
+    <div class="card"><h3>אירוע משפחתי</h3><p style="margin:0">גירושין, פטירה של בן/בת זוג, או ילד עם צרכים מיוחדים.</p></div>
+  </div>
+  <div class="tip"><strong>יועץ או סוכן?</strong> יועץ פנסיוני בעל רישיון מחויב לייעץ לטובתך, ולרוב מקבל עמלה זהה מכל הגופים או שכר טרחה ממך. סוכן ביטוח עובד בשביל חברות מסוימות. שאל ישירות מאיפה מגיע השכר, ובקש את ההמלצה בכתב.</div>
+</section>
+
+<!-- MY ACCOUNTS -->
+<section class="page" id="p-mine" data-title="התיק שלי" data-color="var(--plum)">
+  <span class="pill p-plum">נשמר רק במחשב הזה</span>
+  <h1>התיק שלי</h1>
+  <p class="lede">רשימה אחת של כל הקופות והביטוחים שלך, עם הסטטוס של כל אחד. ממלאים פעם אחת מתוך המסלקה והר הביטוח, ומעדכנים בבדיקה השנתית.</p>
+
+  <div class="card" id="formCard">
+    <h3 id="formTitle">הוספת קופה או ביטוח</h3>
+    <form id="acctForm" class="form" autocomplete="off" style="margin-top:12px">
+      <input type="hidden" id="a_id">
+      <div><label for="a_type">סוג</label><select id="a_type" required></select></div>
+      <div><label for="a_provider">חברה / גוף מנהל</label><input id="a_provider" required placeholder="לדוגמה: מגדל, הראל, מיטב"></div>
+      <div><label for="a_status">סטטוס</label><select id="a_status">
+        <option value="active">פעיל (יש הפקדות / משלם)</option>
+        <option value="inactive">לא פעיל (אין הפקדות)</option>
+        <option value="frozen">מוקפא / מסולק</option>
+        <option value="closed">נסגר / בוטל</option>
+      </select></div>
+      <div><label for="a_policy">מספר חשבון / פוליסה <span class="hint">(רשות)</span></label><input id="a_policy"></div>
+
+      <div class="sv"><label for="a_balance">צבירה נוכחית (₪)</label><input id="a_balance" type="number" min="0" step="100"></div>
+      <div><label for="a_monthly" id="l_monthly">הפקדה חודשית (₪)</label><input id="a_monthly" type="number" min="0" step="10"></div>
+      <div class="sv"><label for="a_feeDep">דמי ניהול מהפקדה (%)</label><input id="a_feeDep" type="number" min="0" max="6" step="0.01"></div>
+      <div class="sv"><label for="a_feeAcc">דמי ניהול מצבירה (%)</label><input id="a_feeAcc" type="number" min="0" max="2" step="0.01"></div>
+      <div class="sv"><label for="a_track">מסלול השקעה</label><input id="a_track" list="tracks" placeholder="לפי גיל, כללי, מנייתי..."></div>
+      <div class="ins"><label for="a_coverage">כיסוי עיקרי</label><input id="a_coverage" placeholder="לדוגמה: סכום ביטוח 1,000,000 ₪"></div>
+      <div class="ins"><label for="a_renewal">תאריך חידוש / סיום</label><input id="a_renewal" type="date"></div>
+      <div><label for="a_benef">מוטבים</label><select id="a_benef">
+        <option value="">לא רלוונטי / לא יודע</option>
+        <option value="yes">מעודכנים</option>
+        <option value="no">צריך לעדכן</option>
+      </select></div>
+      <div><label for="a_checked">נבדק לאחרונה</label><input id="a_checked" type="date"></div>
+      <div class="wide"><label for="a_action">מה צריך לעשות <span class="hint">(יופיע בסיכום כמשימה פתוחה)</span></label><input id="a_action" placeholder="לדוגמה: להתמקח על דמי ניהול, לנייד לקרן הפעילה"></div>
+      <div class="wide"><label for="a_notes">הערות</label><textarea id="a_notes"></textarea></div>
+      <datalist id="tracks"><option value="לפי גיל"><option value="כללי"><option value="מנייתי"><option value="מחקה מדד S&amp;P 500"><option value="אג&quot;ח"><option value="הלכתי"><option value="שקלי טווח קצר"></datalist>
+      <div class="wide btnrow" style="margin:0">
+        <button type="submit" class="btn pri" id="saveBtn">הוספה לתיק</button>
+        <button type="button" class="btn" id="cancelEdit" hidden>ביטול עריכה</button>
+      </div>
+    </form>
+  </div>
+
+  <h2 style="margin-top:36px">הרשומות שלי <span id="acctCount" style="font-family:var(--sans);font-size:17px;color:var(--ink-3);font-weight:400"></span></h2>
+  <div id="acctList"></div>
+  <p><a href="#summary" style="font-weight:700">לסיכום התיק</a></p>
+
+  <h2>גיבוי</h2>
+  <p class="mini">המידע נשמר בדפדפן של המחשב הזה בלבד, ולא נשלח לשום מקום. ניקוי נתוני גלישה ימחק אותו, לכן כדאי לשמור קובץ גיבוי בתיקייה, ולטעון אותו כשעוברים מחשב או דפדפן.</p>
+  <div class="btnrow">
+    <button type="button" class="btn" id="exportBtn">שמירת קובץ גיבוי</button>
+    <label class="btn" for="importFile" style="display:inline-block">טעינה מקובץ גיבוי</label>
+    <input type="file" id="importFile" accept=".json,application/json" hidden>
+    <span id="ioMsg" class="mini" aria-live="polite"></span>
+  </div>
+</section>
+
+<!-- SUMMARY -->
+<section class="page" id="p-summary" data-title="סיכום התיק" data-color="var(--plum)">
+  <span class="pill p-plum">מתעדכן אוטומטית מהתיק שלי</span>
+  <h1>סיכום התיק</h1>
+  <p class="lede" id="sumLede">התמונה המלאה במסך אחד: כמה חסכת, כמה אתה משלם בחודש, ומה דורש טיפול.</p>
+  <div id="sumBody"></div>
+  <div class="btnrow noprint"><a class="btn" href="#mine" style="text-decoration:none">לעריכת התיק</a><button type="button" class="btn" id="printBtn">הדפסה / שמירה כ-PDF</button></div>
+</section>
+
+<!-- PENSION -->
+<section class="page" id="p-pension" data-title="קרן פנסיה" data-color="var(--blue)">
+  <span class="pill p-blue">חובה לשכירים ולעצמאים</span>
+  <h1>קרן פנסיה</h1>
+  <p class="lede">המוצר הכי חשוב שיש לך. הוא קובע כמה כסף תקבל בכל חודש אחרי הפרישה, ואם משהו קורה לך לפני כן, הוא דואג לך ולמשפחה.</p>
+
+  <h2>מה קרן פנסיה מקיפה עושה</h2>
+  <div class="grid2">
+    <div class="card"><h3>חיסכון לקצבה</h3><p style="margin:0">הכסף מושקע לאורך כל שנות העבודה, ובגיל הפרישה הופך לתשלום חודשי עד סוף החיים.</p></div>
+    <div class="card"><h3>ביטוח נכות</h3><p style="margin:0">אם מחלה או תאונה מונעות ממך לעבוד, הקרן משלמת קצבה חודשית.</p></div>
+    <div class="card"><h3>ביטוח שארים</h3><p style="margin:0">במקרה פטירה, בן/בת הזוג והילדים מקבלים קצבה חודשית.</p></div>
+  </div>
+
+  <h2>דמי ניהול: הדבר שהכי שווה לבדוק</h2>
+  <p>יש שני סוגים: אחוז מכל הפקדה חודשית, ואחוז מכל הכסף שכבר צברת. החוק מתיר עד 6% מההפקדה ועד 0.5% מהצבירה, אבל כמעט כולם יכולים לקבל פחות. מעסיקים גדולים לרוב סגרו הסכם קבוצתי, ומי שלא, יכול להתמקח ישירות מול הקרן.</p>
+  <p>הצבירה היא העיקר: עשירית אחוז נשמעת זניח, אבל היא נלקחת מכל הסכום, בכל שנה, במשך עשורים.</p>
+
+  <div class="card">
+    <h3>מחשבון: כמה עולים דמי ניהול גבוהים</h3>
+    <p style="font-size:15px;color:var(--ink-2)">הערכה גסה בלבד. מניח הפרשה של 18.5% מהשכר ותשואה ריאלית של 4% בשנה, בלי עליות שכר.</p>
+    <div class="calc">
+      <div><label for="sal">שכר ברוטו חודשי</label><input id="sal" type="range" min="6000" max="40000" step="500" value="15000"><output id="salO"></output></div>
+      <div><label for="yrs">שנים עד הפרישה</label><input id="yrs" type="range" min="5" max="45" step="1" value="35"><output id="yrsO"></output></div>
+      <div><label for="f1">דמי ניהול מצבירה: נמוכים</label><input id="f1" type="range" min="0.05" max="0.5" step="0.01" value="0.1"><output id="f1O"></output></div>
+      <div><label for="f2">דמי ניהול מצבירה: גבוהים</label><input id="f2" type="range" min="0.05" max="0.5" step="0.01" value="0.4"><output id="f2O"></output></div>
+    </div>
+    <div class="result">
+      <div><div class="k">צבירה בדמי ניהול נמוכים</div><div class="v" id="r1"></div></div>
+      <div><div class="k">צבירה בדמי ניהול גבוהים</div><div class="v" id="r2"></div></div>
+      <div><div class="k">ההפרש</div><div class="v bad" id="r3"></div></div>
+    </div>
+  </div>
+
+  <h2>מסלול השקעה</h2>
+  <p>ברירת המחדל היא מסלול לפי גיל: בגיל צעיר יותר מניות (יותר סיכון, יותר תשואה צפויה לאורך זמן), וקרוב לפרישה יותר אג"ח. יש גם מסלולים מחקי מדד, מנייתי, הלכתי ועוד. כדאי לוודא שאתה יודע באיזה מסלול אתה, ושהוא מתאים לך.</p>
+
+  <h2>קרן פנסיה או ביטוח מנהלים</h2>
+  <div class="table-wrap"><table>
+    <tr><th></th><th>קרן פנסיה מקיפה</th><th>ביטוח מנהלים</th></tr>
+    <tr><td>דמי ניהול</td><td>בדרך כלל נמוכים יותר</td><td>בדרך כלל גבוהים יותר</td></tr>
+    <tr><td>ביטוחים</td><td>נכות ושארים כלולים</td><td>נרכשים בנפרד, גמיש יותר</td></tr>
+    <tr><td>מתאים ל</td><td>רוב האנשים</td><td>בעיקר פוליסות ישנות עם מקדם קצבה מובטח</td></tr>
+  </table></div>
+
+  <div class="warn"><strong>לא לסגור פוליסה ישנה בלי בדיקה.</strong> פוליסות ביטוח מנהלים מלפני 2013 כוללות לעיתים מקדם קצבה מובטח, שקובע כמה קצבה תקבל על כל שקל. תנאים כאלה כבר לא נמכרים היום.</div>
+
+  <h2>טעויות נפוצות</h2>
+  <div class="tip"><strong>כמה קרנות פתוחות.</strong> כל עבודה פתחה לך קרן חדשה, וכל אחת גובה דמי ניהול. ייתכן גם שאתה משלם על ביטוח נכות ושארים פעמיים. אפשר לאחד לקרן הפעילה.</div>
+  <div class="tip"><strong>הפסקה בהפקדות.</strong> אחרי כמה חודשים בלי הפקדה (בין עבודות, חל"ת, לימודים), הכיסוי הביטוחי יכול להיפסק. אפשר לבקש "הסדר ריסק זמני" כדי לשמור עליו.</div>
+  <div class="tip"><strong>מוטבים לא מעודכנים.</strong> אחרי חתונה, גירושין או לידה, כדאי לעדכן מי מקבל את הכסף.</div>
+</section>
+
+<!-- SAVINGS -->
+<section class="page" id="p-savings" data-title="השתלמות וגמל" data-color="var(--green)">
+  <span class="pill p-green">חיסכון שאפשר להשתמש בו לפני הפרישה</span>
+  <h1>קרן השתלמות וקופות גמל</h1>
+  <p class="lede">החיסכון שמשלים את הפנסיה. חלק מהכסף נזיל אחרי כמה שנים, וחלק פטור ממס, וזה מה שעושה אותם כל כך משתלמים.</p>
+
+  <h2>קרן השתלמות</h2>
+  <div class="card">
+    <span class="pill p-green">ההטבה הכי משתלמת לשכיר</span>
+    <ul class="facts">
+      <li><b>הפקדה מקובלת</b><span>עובד 2.5%, מעסיק 7.5%. בפועל זו תוספת של 7.5% לשכר.</span></li>
+      <li><b>חובה?</b><span>לא בחוק, אלא תלוי בהסכם העבודה. כדאי לבקש בכל משא ומתן על שכר.</span></li>
+      <li><b>נזילות</b><span>אחרי 6 שנים מהפתיחה. אחרי 3 שנים למטרת השתלמות מקצועית, או בגיל פרישה.</span></li>
+      <li><b>מס</b><span>הרווחים פטורים ממס רווחי הון, עד תקרת שכר שמתעדכנת מדי שנה.</span></li>
+      <li><b>עצמאים</b><span>יכולים לפתוח ולקבל ניכוי ממס על חלק מההפקדה.</span></li>
+    </ul>
+  </div>
+  <div class="tip"><strong>לא חייבים למשוך אחרי 6 שנים.</strong> אפשר להשאיר את הכסף בקרן, להמשיך לצבור בפטור ממס, ולמשוך בכל רגע שצריך. היא מתפקדת כמו קופת חירום משתלמת.</div>
+
+  <h2>קופת גמל להשקעה</h2>
+  <div class="card">
+    <span class="pill p-blue">חיסכון גמיש</span>
+    <ul class="facts">
+      <li><b>למי</b><span>מי שרוצה לחסוך מעבר לפנסיה ולהשתלמות, בלי להתעסק בשוק ההון לבד.</span></li>
+      <li><b>נזילות</b><span>אפשר למשוך בכל עת, ומשלמים 25% מס על הרווח בלבד.</span></li>
+      <li><b>היתרון בגיל 60</b><span>אם ממירים את הכסף לקצבה חודשית, הקצבה פטורה ממס רווחי הון.</span></li>
+      <li><b>תקרה</b><span>יש תקרת הפקדה שנתית שמתעדכנת כל שנה.</span></li>
+    </ul>
+  </div>
+
+  <h2>חיסכון לכל ילד</h2>
+  <div class="card">
+    <span class="pill p-plum">אוטומטי מביטוח לאומי</span>
+    <p>ביטוח לאומי מפקיד כל חודש סכום קבוע לחיסכון על שם כל ילד, עד גיל 18. ההורים בוחרים אם בבנק או בקופת גמל, ובאיזה מסלול. מי שלא בוחר, הכסף מופנה אוטומטית.</p>
+    <p style="margin:0">אפשר להכפיל את ההפקדה מתוך קצבת הילדים. בגיל 18 הילד יכול למשוך, ואם מחכה לגיל 21 מקבל מענק נוסף.</p>
+  </div>
+
+  <h2>השוואה מהירה</h2>
+  <div class="table-wrap"><table>
+    <tr><th></th><th>פנסיה</th><th>השתלמות</th><th>גמל להשקעה</th></tr>
+    <tr><td>מטרה</td><td>קצבה בפרישה</td><td>חיסכון לטווח בינוני</td><td>חיסכון גמיש</td></tr>
+    <tr><td>מתי אפשר למשוך</td><td>בפרישה</td><td>אחרי 6 שנים</td><td>בכל עת</td></tr>
+    <tr><td>מס על הרווח</td><td>הטבות על הקצבה</td><td>פטור (עד תקרה)</td><td>25%, או פטור כקצבה מגיל 60</td></tr>
+  </table></div>
+</section>
+
+<!-- HEALTH -->
+<section class="page" id="p-health" data-title="ביטוח בריאות" data-color="var(--plum)">
+  <span class="pill p-plum">שלוש שכבות</span>
+  <h1>ביטוח בריאות</h1>
+  <p class="lede">כולם מבוטחים דרך קופת החולים. השאלה היא מה מעבר לזה, ואיך לא לשלם פעמיים על אותו דבר.</p>
+
+  <h2>השכבות</h2>
+  <div class="card"><span class="pill p-blue">שכבה ראשונה · חובה</span><h3>סל הבריאות של קופת החולים</h3><p style="margin:0">ממומן דרך מס בריאות שמנוכה מהשכר. כולל טיפולים, תרופות שבסל, אשפוזים וניתוחים בבתי חולים ציבוריים.</p></div>
+  <div class="card"><span class="pill p-green">שכבה שנייה · וולונטרי</span><h3>שב"ן: הביטוח המשלים של הקופה</h3><p style="margin:0">מושלם, זהב, פלטינום וכדומה. זול יחסית, מקבל כל אחד בלי קשר למצב בריאותי, ונותן הנחות על ניתוחים פרטיים, רפואה משלימה ועוד. הקופה יכולה לשנות את התנאים.</p></div>
+  <div class="card"><span class="pill p-ochre">שכבה שלישית · וולונטרי</span><h3>ביטוח בריאות פרטי</h3><p style="margin:0">מחברת ביטוח. הכיסויים החשובים בו: תרופות שאינן בסל (בעיקר לסרטן ומחלות קשות), השתלות, וניתוחים פרטיים בארץ ובחו"ל. התנאים מעוגנים בחוזה.</p></div>
+
+  <h2>מה באמת חשוב בביטוח פרטי</h2>
+  <p>הכיסוי לתרופות מחוץ לסל ולהשתלות הוא הדבר שבאמת יכול להציל ממצב כלכלי קשה, כי מדובר בעשרות או מאות אלפי שקלים. כיסוי לניתוחים פרטיים נחמד, אבל חלק ממנו כבר קיים בשב"ן.</p>
+  <p>כדאי לשים לב גם למחיר לאורך זמן: הפרמיה עולה עם הגיל, ולפעמים בחדות.</p>
+
+  <div class="warn"><strong>כפילויות.</strong> הרבה אנשים מחזיקים ביטוח פרטי, ביטוח קבוצתי דרך העבודה, ושב"ן, שחלקם מכסים בדיוק את אותו ניתוח. במקרה אמת, ההחזר הוא פעם אחת בלבד. בדוק בהר הביטוח.</div>
+  <div class="tip"><strong>ביטוח קבוצתי דרך העבודה.</strong> לרוב זול ומוצלח, אבל נגמר כשעוזבים. כדאי לבדוק אם אפשר להמשיך אותו כביטוח פרטי בלי חיתום חדש.</div>
+</section>
+
+<!-- LIFE -->
+<section class="page" id="p-life" data-title="חיים ואובדן כושר" data-color="var(--ochre)">
+  <span class="pill p-ochre">לפי מצב משפחתי</span>
+  <h1>ביטוח חיים, אובדן כושר עבודה ועוד</h1>
+  <p class="lede">ביטוחים שמגנים על ההכנסה שלך ועל מי שתלוי בה. לא כולם צריכים את כולם.</p>
+
+  <h2>ביטוח חיים (ריסק)</h2>
+  <div class="card">
+    <ul class="facts">
+      <li><b>מה זה</b><span>סכום חד-פעמי שמשולם למוטבים במקרה פטירה.</span></li>
+      <li><b>למי</b><span>בעיקר מי שיש לו ילדים, בן/בת זוג שתלוי בהכנסה, או משכנתא.</span></li>
+      <li><b>כמה</b><span>שאלה לחשוב עליה: כמה כסף המשפחה תצטרך כדי להסתדר בלעדיך, פחות מה שכבר מכוסה מהפנסיה (ביטוח שארים) וממקורות אחרים.</span></li>
+      <li><b>לא צריך</b><span>בדרך כלל רווקים בלי תלויים ובלי משכנתא.</span></li>
+    </ul>
+  </div>
+
+  <h2>אובדן כושר עבודה</h2>
+  <div class="card">
+    <p>משלם קצבה חודשית אם מחלה או תאונה מונעות ממך לעבוד. לרוב הוא הביטוח שהכי פחות מדברים עליו, אבל אצל צעירים הסיכוי לאובדן כושר עבודה גבוה יותר מהסיכוי לפטירה.</p>
+    <p style="margin:0">קרן הפנסיה כבר נותנת כיסוי כזה (ביטוח נכות). כדאי לבדוק כמה ממנו קיים, ואיך מוגדר בו אובדן כושר: האם בעיסוק הספציפי שלך, או בכל עבודה שהיא. ההגדרה הראשונה טובה יותר.</p>
+  </div>
+
+  <h2>משכנתא</h2>
+  <div class="card">
+    <p>הבנק מחייב שני ביטוחים: ביטוח חיים לכל לווה, וביטוח מבנה לדירה.</p>
+    <p style="margin:0">לא חייבים לקנות אותם דרך הבנק. ביטוח חיצוני בדרך כלל זול יותר, והבנק חייב לקבל אותו אם הוא עומד בתנאים. כדאי להשוות מחירים ולבדוק מחדש כל כמה שנים.</p>
+  </div>
+
+  <h2>רכב, דירה וסיעודי</h2>
+  <div class="grid2">
+    <div class="card"><h3>רכב</h3><p style="margin:0">ביטוח חובה הוא חובה בחוק ומכסה פגיעה בגוף. מקיף או צד ג' מכסים נזק לרכבים, לפי שווי הרכב שלך.</p></div>
+    <div class="card"><h3>דירה</h3><p style="margin:0">ביטוח מבנה חובה במשכנתא. ביטוח תכולה לפי שווי הרכוש, וכדאי גם צד ג' (אם נזילה מגיעה לשכן).</p></div>
+    <div class="card"><h3>סיעודי</h3><p style="margin:0">משלם אם צריך עזרה בפעולות יומיום. הכיסוי בקופות החולים השתנה בשנים האחרונות, אז כדאי לבדוק מה קיים היום ובאיזה גיל לשקול פרטי.</p></div>
+  </div>
+
+  <div class="warn"><strong>מוטבים.</strong> בביטוח חיים ובפנסיה, הכסף עובר למי שרשום כמוטב, לא בהכרח לפי הצוואה. ודא שהרשימה עדכנית.</div>
+</section>
+
+<!-- GOV -->
+<section class="page" id="p-gov" data-title="ביטוח לאומי ומיסים" data-color="var(--blue)">
+  <span class="pill p-blue">חובה לכולם</span>
+  <h1>ביטוח לאומי ומיסים</h1>
+  <p class="lede">הצד של המדינה: מה חייבים לשלם, מה מגיע לך בחזרה, ואיפה כסף נשאר על השולחן.</p>
+
+  <h2>ביטוח לאומי ומס בריאות</h2>
+  <div class="card">
+    <ul class="facts">
+      <li><b>ממתי</b><span>מגיל 18, לכל תושב ישראל.</span></li>
+      <li><b>שכירים</b><span>מנוכה אוטומטית מהמשכורת.</span></li>
+      <li><b>עצמאים</b><span>משלמים מקדמות בעצמם, לפי הכנסה מוערכת.</span></li>
+      <li><b>לא עובדים</b><span>סטודנטים, מי שבין עבודות, שנה בחו"ל: משלמים דמי ביטוח מינימליים.</span></li>
+    </ul>
+  </div>
+  <div class="warn"><strong>חוב שנצבר בשקט.</strong> מי שלא עבד כמה חודשים ולא שילם צובר חוב לביטוח לאומי, ועלול לאבד זכויות כמו דמי לידה, דמי אבטלה או קצבת נכות. כדאי לבדוק באזור האישי באתר.</div>
+
+  <h2>החזרי מס</h2>
+  <p>אפשר לבקש החזר על 6 השנים האחרונות. מקרים שבהם הרבה אנשים זכאים בלי לדעת:</p>
+  <div class="grid2">
+    <div class="card"><h3>שינויים בעבודה</h3><p style="margin:0">החלפת עבודה באמצע שנה, שתי עבודות במקביל, או חודשים בלי עבודה.</p></div>
+    <div class="card"><h3>לימודים</h3><p style="margin:0">סיום תואר אקדמי או לימודי מקצוע מזכה בנקודות זיכוי בשנים שאחרי.</p></div>
+    <div class="card"><h3>משפחה</h3><p style="margin:0">ילדים, ובמיוחד ילדים עם צרכים מיוחדים, או מזונות.</p></div>
+    <div class="card"><h3>הוצאות מוכרות</h3><p style="margin:0">תרומות למוסד מוכר, הפקדה עצמאית לפנסיה או לביטוח חיים.</p></div>
+  </div>
+  <div class="tip"><strong>אפשר לבד.</strong> הגשה דרך אתר רשות המסים היא בחינם. חברות להחזרי מס לוקחות עמלה, לפעמים משמעותית.</div>
+
+  <h2>לעצמאים</h2>
+  <p>עצמאים חייבים בחוק להפקיד לפנסיה, באחוז מההכנסה. ההפקדה מזכה בזיכוי ובניכוי ממס, כך שחלק נכבד ממנה חוזר דרך המס. גם הפקדה לקרן השתלמות מזכה בניכוי.</p>
+</section>
+
+<!-- TOOLS -->
+<section class="page" id="p-tools" data-title="כלים לבדיקה" data-color="var(--green)">
+  <span class="pill p-green">חינם, באתרי ממשלה</span>
+  <h1>כלים לבדוק בעצמך</h1>
+  <p class="lede">האתרים הרשמיים שנותנים תמונה מלאה, בלי סוכן ובלי עלות. אלה בדיוק הכלים שיועץ משתמש בהם בשלב המיפוי.</p>
+
+  <div class="card toolcard"><span class="pill p-green">פנסיה וחיסכון</span><h3>המסלקה הפנסיונית</h3><p>כל הקופות שלך: פנסיה, השתלמות, גמל וביטוח מנהלים. הצבירה, דמי הניהול, המסלול והכיסויים. הבסיס לכל שיחה עם יועץ.</p><a class="big" href="https://www.swiftness.co.il" target="_blank" rel="noopener">למסלקה הפנסיונית</a></div>
+  <div class="card toolcard"><span class="pill p-blue">ביטוחים</span><h3>הר הביטוח</h3><p>כל פוליסות הביטוח שלך במקום אחד: בריאות, חיים, סיעוד, רכב ודירה. הדרך הכי מהירה לגלות כפילויות.</p><a class="big" href="https://harb.cma.gov.il" target="_blank" rel="noopener">להר הביטוח</a></div>
+  <div class="card toolcard"><span class="pill p-ochre">כסף שנשכח</span><h3>הר הכסף</h3><p>איתור קופות לא פעילות וחסכונות שאין להם קשר עם הבעלים. בודק גם עבור קרובים שנפטרו.</p><a class="big" href="https://itur.mof.gov.il" target="_blank" rel="noopener">להר הכסף</a></div>
+  <div class="card toolcard"><span class="pill p-plum">השוואה</span><h3>גמל נט ופנסיה נט</h3><p>השוואת תשואות ודמי ניהול בין קופות, מאתר רשות שוק ההון.</p><a class="big" href="https://gemelnet.cma.gov.il" target="_blank" rel="noopener">לגמל נט</a></div>
+
+  <h2>מה לבקש כשמדברים עם יועץ</h2>
+  <p>יועץ פנסיוני בעל רישיון מחויב לייעץ לטובתך ולא לטובת חברה מסוימת. סוכן ביטוח משווק מוצרים ומקבל עמלה. כדאי לשאול ישירות מאיפה מגיע השכר שלו, ולבקש את ההמלצה בכתב. <a href="#review">איך נראית בדיקה טובה</a></p>
+</section>
+
+<!-- CHECKLIST -->
+<section class="page" id="p-check" data-title="צ'קליסט שנתי" data-color="var(--ink)">
+  <h1>צ'קליסט שנתי</h1>
+  <p class="lede">הבדיקה השנתית בגרסה מקוצרת. שעה וחצי בשנה, ואתה מכוסה. הסימונים נשמרים בדפדפן הזה.</p>
+  <div class="bar"><span id="barFill" style="width:0"></span></div>
+  <p id="prog" style="font-size:15px;color:var(--ink-2)"></p>
+  <div id="checks"></div>
+  <p style="margin-top:20px"><button id="reset" type="button" style="font:inherit;font-size:15px;padding:8px 16px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer">אפס סימונים</button></p>
+</section>
+
+<p class="disclaimer">המידע כאן כללי ואינו ייעוץ פנסיוני, פיננסי או משפטי. תקרות, שיעורי מס, אמות מידה לדמי ניהול וגיל הפרישה לנשים מתעדכנים מדי שנה. לפני החלטה משמעותית כדאי להתייעץ עם יועץ פנסיוני בעל רישיון.</p>
+<div class="pager" id="pager"></div>
+</main>
+</div>
+
+<script>
+const ORDER=['home','review','mine','summary','pension','savings','health','life','gov','tools','check'];
+const pages=ORDER.map(id=>{const el=document.getElementById('p-'+id);return{id,el,title:el.dataset.title,color:el.dataset.color}});
+const side=document.getElementById('sidenav'),topNav=document.getElementById('topnav'),pager=document.getElementById('pager');
+side.innerHTML=pages.map(p=>`<li><a class="nl" href="#${p.id}" data-id="${p.id}"><span class="dot" style="background:${p.color}"></span>${p.title}</a></li>`).join('');
+topNav.innerHTML=`<a class="brand" href="#home">המדריך הפיננסי לאזרח</a><div class="scroll">${pages.map(p=>`<a href="#${p.id}" data-id="${p.id}">${p.title}</a>`).join('')}</div>`;
+function route(){
+  let id=(location.hash||'#home').slice(1); if(!ORDER.includes(id)) id='home';
+  pages.forEach(p=>p.el.classList.toggle('on',p.id===id));
+  document.querySelectorAll('[data-id]').forEach(a=>a.classList.toggle('on',a.dataset.id===id));
+  const i=ORDER.indexOf(id), prev=pages[i-1], next=pages[i+1];
+  pager.innerHTML=(prev?`<a href="#${prev.id}">הקודם: ${prev.title}</a>`:'<span></span>')+(next?`<a href="#${next.id}">הבא: ${next.title}</a>`:'<span></span>');
+  document.title=(id==='home'?'':pages[i].title+' | ')+'המדריך הפיננסי לאזרח';
+  window.scrollTo(0,0);
+  const t=document.querySelector('.topnav a.on'); if(t) t.scrollIntoView({block:'nearest',inline:'center'});
+}
+window.addEventListener('hashchange',route); route();
+
+const nf=new Intl.NumberFormat('he-IL',{maximumFractionDigits:0});
+const $=id=>document.getElementById(id);
+function fv(monthly,years,fee){
+  const r=Math.pow(1.04,1/12)-1, f=fee/100/12; let b=0;
+  for(let m=0;m<years*12;m++){b=(b+monthly)*(1+r)-b*f;}
+  return b;
+}
+function calc(){
+  const s=+$('sal').value,y=+$('yrs').value,a=+$('f1').value,b=+$('f2').value;
+  $('salO').textContent=nf.format(s)+' ₪'; $('yrsO').textContent=y+' שנים';
+  $('f1O').textContent=a.toFixed(2)+'%'; $('f2O').textContent=b.toFixed(2)+'%';
+  const m=s*0.185*0.99, v1=fv(m,y,a), v2=fv(m,y,b);
+  $('r1').textContent=nf.format(v1)+' ₪'; $('r2').textContent=nf.format(v2)+' ₪';
+  $('r3').textContent=nf.format(Math.abs(v1-v2))+' ₪';
+}
+['sal','yrs','f1','f2'].forEach(i=>$(i).addEventListener('input',calc)); calc();
+
+/* fee checker: rough market benchmarks [good, ok] for deposit and accumulation */
+const BENCH={
+  pension:{dep:[1.5,3],acc:[0.22,0.3],name:'קרן פנסיה',note:'קרנות ברירת המחדל וההסכמים הקבוצתיים הגדולים נמצאים בדרך כלל סביב 1%-1.5% מההפקדה ו-0.1%-0.22% מהצבירה.'},
+  gemel:{dep:[0,1],acc:[0.6,0.8],name:'קרן השתלמות / גמל',note:'ברוב הקופות האלה לא גובים מההפקדה בכלל, ודמי ניהול מהצבירה של 0.5%-0.7% הם רמה שאפשר לקבל במיקוח.'},
+  exec:{dep:[2,4],acc:[0.5,0.8],name:'ביטוח מנהלים',note:'בביטוח מנהלים דמי הניהול בדרך כלל גבוהים יותר. בפוליסה ישנה עם מקדם מובטח, ייתכן שזה עדיין שווה.'}
+};
+function grade(v,[g,o]){return v<=g?0:v<=o?1:2}
+function feeCheck(){
+  const b=BENCH[$('ft').value], d=Math.max(0,+$('fd').value||0), a=Math.max(0,+$('fa').value||0);
+  const lvl=Math.max(grade(d,b.dep),grade(a,b.acc));
+  const cls=['good','ok','high'][lvl];
+  const head=['דמי ניהול טובים','סביר, אבל יש מקום למיקוח','גבוהים ביחס לשוק'][lvl];
+  const act=['אין צורך לפעול, רק לוודא שההנחה לא פגה (חלק מההנחות מוגבלות בזמן).','שווה שיחת טלפון לקרן עם הצעה ממקום אחר.','כדאי להתמקח או לשקול ניוד. על צבירה גדולה, ההבדל מצטבר לעשרות אלפי שקלים.'][lvl];
+  const v=$('fverdict'); v.className='verdict '+cls;
+  v.innerHTML=`<b>${head}</b>${act}<br><span style="opacity:.85;font-size:15px">${b.note}</span>`;
+}
+['ft','fd','fa'].forEach(i=>$(i).addEventListener('input',feeCheck));
+$('ft').addEventListener('change',()=>{const t=$('ft').value;const def={pension:[1.5,0.22],gemel:[0,0.7],exec:[3,0.8]}[t];$('fd').value=def[0];$('fa').value=def[1];feeCheck()});
+feeCheck();
+
+/* ===== My accounts ===== */
+const TYPES={
+  pension:{n:'קרן פנסיה',g:'sv',bench:'pension'},
+  hishtalmut:{n:'קרן השתלמות',g:'sv',bench:'gemel'},
+  gemel:{n:'קופת גמל / גמל להשקעה',g:'sv',bench:'gemel'},
+  exec:{n:'ביטוח מנהלים',g:'sv',bench:'exec'},
+  kids:{n:'חיסכון לכל ילד',g:'sv'},
+  health:{n:'ביטוח בריאות פרטי',g:'ins',dup:true},
+  shaban:{n:'שב"ן (משלים בקופה)',g:'ins',dup:true},
+  life:{n:'ביטוח חיים (ריסק)',g:'ins',benef:true},
+  disab:{n:'אובדן כושר עבודה',g:'ins',dup:true},
+  ltc:{n:'ביטוח סיעודי',g:'ins',dup:true},
+  mortgage:{n:'ביטוח משכנתא',g:'ins'},
+  home:{n:'ביטוח דירה',g:'ins'},
+  car:{n:'ביטוח רכב',g:'ins'},
+  other:{n:'אחר',g:'ins'}
+};
+const STATUS={active:'פעיל',inactive:'לא פעיל',frozen:'מוקפא',closed:'נסגר'};
+const AKEY='welfare-accounts-v1';
+const FIELDS=['type','provider','status','policy','balance','monthly','feeDep','feeAcc','track','coverage','renewal','benef','checked','action','notes'];
+function aLoad(){try{const v=JSON.parse(localStorage.getItem(AKEY));return Array.isArray(v)?v:[]}catch(e){return[]}}
+function aSave(){try{localStorage.setItem(AKEY,JSON.stringify(accts))}catch(e){}}
+let accts=aLoad();
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const ils=v=>nf.format(v||0)+' ₪';
+const num=v=>v===''||v==null||isNaN(+v)?null:+v;
+const fmtDate=d=>d?new Date(d+'T00:00:00').toLocaleDateString('he-IL'):'';
+const isSv=a=>TYPES[a.type]?.g==='sv';
+const live=a=>a.status!=='closed';
+
+$('a_type').innerHTML='<optgroup label="חיסכון">'+Object.entries(TYPES).filter(([,t])=>t.g==='sv').map(([k,t])=>`<option value="${k}">${t.n}</option>`).join('')+'</optgroup><optgroup label="ביטוח">'+Object.entries(TYPES).filter(([,t])=>t.g==='ins').map(([k,t])=>`<option value="${k}">${t.n}</option>`).join('')+'</optgroup>';
+function syncForm(){
+  const sv=TYPES[$('a_type').value].g==='sv';
+  document.querySelectorAll('#acctForm .sv').forEach(e=>e.hidden=!sv);
+  document.querySelectorAll('#acctForm .ins').forEach(e=>e.hidden=sv);
+  $('l_monthly').textContent=sv?'הפקדה חודשית (₪)':'פרמיה חודשית (₪)';
+}
+$('a_type').addEventListener('change',syncForm); syncForm();
+
+function feeGrade(a){
+  const bk=TYPES[a.type]?.bench; if(!bk) return null;
+  const d=num(a.feeDep), c=num(a.feeAcc); if(d==null&&c==null) return null;
+  const b=BENCH[bk]; return Math.max(d==null?0:grade(d,b.dep),c==null?0:grade(c,b.acc));
+}
+const FEE_TXT=['טובים','סבירים','גבוהים'], FEE_CLS=['fee-g','fee-o','fee-h'];
+function monthsSince(d){if(!d)return Infinity;const t=new Date(d+'T00:00:00');return (Date.now()-t)/2629800000}
+
+function resetForm(){
+  $('acctForm').reset(); $('a_id').value=''; syncForm();
+  $('formTitle').textContent='הוספת קופה או ביטוח'; $('saveBtn').textContent='הוספה לתיק'; $('cancelEdit').hidden=true;
+}
+$('acctForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const rec={}; FIELDS.forEach(f=>rec[f]=$('a_'+f).value.trim());
+  const id=$('a_id').value;
+  if(id){const i=accts.findIndex(a=>a.id===id); if(i>-1) accts[i]={...accts[i],...rec,updated:new Date().toISOString()};}
+  else accts.push({id:Date.now().toString(36)+Math.random().toString(36).slice(2,6),...rec,updated:new Date().toISOString()});
+  aSave(); resetForm(); renderAccts();
+});
+$('cancelEdit').addEventListener('click',resetForm);
+
+function renderAccts(){
+  $('acctCount').textContent=accts.length?`(${accts.length})`:'';
+  if(!accts.length){$('acctList').innerHTML='<div class="empty">עדיין אין רשומות. התחל מהקופות שמופיעות במסלקה הפנסיונית.</div>';return}
+  const order=Object.keys(TYPES);
+  const list=[...accts].sort((a,b)=>(a.status==='closed')-(b.status==='closed')||order.indexOf(a.type)-order.indexOf(b.type));
+  $('acctList').innerHTML=list.map(a=>{
+    const t=TYPES[a.type]||TYPES.other, fg=feeGrade(a), m=[];
+    if(isSv(a)&&num(a.balance)!=null) m.push(`<span>צבירה ${ils(+a.balance)}</span>`);
+    if(num(a.monthly)!=null) m.push(`<span>${isSv(a)?'הפקדה':'פרמיה'} ${ils(+a.monthly)} בחודש</span>`);
+    if(fg!=null) m.push(`<span>דמי ניהול <span class="${FEE_CLS[fg]}">${FEE_TXT[fg]}</span> (${a.feeDep||0}% / ${a.feeAcc||0}%)</span>`);
+    if(isSv(a)&&a.track) m.push(`<span>${esc(a.track)}</span>`);
+    if(!isSv(a)&&a.coverage) m.push(`<span>${esc(a.coverage)}</span>`);
+    if(a.checked) m.push(`<span>נבדק ${fmtDate(a.checked)}</span>`);
+    return `<div class="card acct"><div><h3>${esc(t.n)} · ${esc(a.provider)}<span class="st ${esc(a.status)}">${STATUS[a.status]||''}</span></h3><div class="meta">${m.join('')}</div>${a.notes?`<div class="mini" style="margin-top:4px">${esc(a.notes)}</div>`:''}</div>
+      <div class="act"><button class="btn sm" data-edit="${a.id}">עריכה</button><button class="btn sm danger" data-del="${a.id}">מחיקה</button></div>
+      ${a.action?`<div class="todo">לטיפול: ${esc(a.action)}</div>`:''}</div>`;
+  }).join('');
+}
+$('acctList').addEventListener('click',e=>{
+  const ed=e.target.closest('[data-edit]'), dl=e.target.closest('[data-del]');
+  if(ed){const a=accts.find(x=>x.id===ed.dataset.edit); if(!a) return;
+    $('a_id').value=a.id; FIELDS.forEach(f=>$('a_'+f).value=a[f]??''); syncForm();
+    $('formTitle').textContent='עריכת רשומה'; $('saveBtn').textContent='שמירת שינויים'; $('cancelEdit').hidden=false;
+    $('formCard').scrollIntoView({behavior:'smooth',block:'start'}); $('a_provider').focus({preventScroll:true});}
+  if(dl){
+    if(dl.dataset.armed){accts=accts.filter(x=>x.id!==dl.dataset.del); aSave(); renderAccts(); if($('a_id').value===dl.dataset.del) resetForm();}
+    else{dl.dataset.armed='1'; dl.textContent='למחוק? לחץ שוב'; setTimeout(()=>{if(dl.isConnected){delete dl.dataset.armed; dl.textContent='מחיקה'}},3000);}
+  }
+});
+
+/* backup */
+$('exportBtn').addEventListener('click',()=>{
+  const blob=new Blob([JSON.stringify({version:1,exported:new Date().toISOString(),accounts:accts},null,2)],{type:'application/json'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
+  a.download='welfare-backup-'+new Date().toISOString().slice(0,10)+'.json'; document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(a.href),1000); $('ioMsg').textContent='קובץ הגיבוי נשמר בתיקיית ההורדות.';
+});
+$('importFile').addEventListener('change',e=>{
+  const f=e.target.files[0]; if(!f) return; const r=new FileReader();
+  r.onload=()=>{try{const d=JSON.parse(r.result); const arr=Array.isArray(d)?d:d.accounts; if(!Array.isArray(arr)) throw 0;
+      accts=arr.filter(a=>a&&a.type&&a.id); aSave(); renderAccts(); renderSummary(); $('ioMsg').textContent=`נטענו ${accts.length} רשומות.`;}
+    catch(err){$('ioMsg').textContent='הקובץ לא נקרא. ודא שזה קובץ גיבוי מהאתר הזה.'}
+    e.target.value='';};
+  r.readAsText(f);
+});
+
+/* summary */
+function renderSummary(){
+  const L=accts.filter(live);
+  if(!L.length){$('sumBody').innerHTML='<div class="empty">אין עדיין נתונים. <a href="#mine">הוסף קופות וביטוחים בעמוד התיק שלי</a>.</div>';return}
+  const sv=L.filter(isSv), ins=L.filter(a=>!isSv(a));
+  const bal=sv.reduce((s,a)=>s+(num(a.balance)||0),0);
+  const dep=sv.filter(a=>a.status==='active').reduce((s,a)=>s+(num(a.monthly)||0),0);
+  const prem=ins.filter(a=>a.status==='active').reduce((s,a)=>s+(num(a.monthly)||0),0);
+  const todos=L.filter(a=>a.action);
+
+  /* alerts: [level, text] level 2=high,1=mid */
+  const al=[]; const nm=a=>`${TYPES[a.type].n} ב${a.provider}`;
+  const pens=sv.filter(a=>a.type==='pension');
+  if(!pens.some(a=>a.status==='active')) al.push([2,'אין קרן פנסיה פעילה ברשימה. אם אתה שכיר או עצמאי, זו חובה. כדאי לבדוק במסלקה.']);
+  const inactP=pens.filter(a=>a.status==='inactive');
+  if(inactP.length&&pens.length>1) al.push([1,`יש ${inactP.length} קרנות פנסיה לא פעילות (${inactP.map(a=>esc(a.provider)).join(', ')}). שקול לאחד לקרן הפעילה.`]);
+  const inactH=sv.filter(a=>a.type==='hishtalmut'&&a.status==='inactive');
+  if(inactH.length>1) al.push([1,`יש ${inactH.length} קרנות השתלמות לא פעילות. אפשר לאחד אותן בלי לאבד ותק.`]);
+  sv.forEach(a=>{const g=feeGrade(a); if(g===2) al.push([2,`דמי ניהול גבוהים: ${esc(nm(a))} (${[a.feeDep!==''&&a.feeDep!=null?a.feeDep+'% מהפקדה':'',a.feeAcc!==''&&a.feeAcc!=null?a.feeAcc+'% מצבירה':''].filter(Boolean).join(', ')}).`]); else if(g===1) al.push([1,`יש מקום למיקוח על דמי הניהול: ${esc(nm(a))}.`]);
+    if(a.type==='exec'&&a.status!=='active') al.push([1,`ביטוח מנהלים לא פעיל ב${esc(a.provider)}: לבדוק אם יש מקדם קצבה מובטח לפני שמנידים או סוגרים.`]);});
+  Object.entries(TYPES).filter(([,t])=>t.dup).forEach(([k,t])=>{const s=ins.filter(a=>a.type===k&&a.status==='active'); if(s.length>1) al.push([1,`${s.length} פוליסות פעילות של ${t.n} (${s.map(a=>esc(a.provider)).join(', ')}). ייתכן שאתה משלם פעמיים על אותו כיסוי.`]);});
+  const benefNo=L.filter(a=>a.benef==='no'); if(benefNo.length) al.push([2,`צריך לעדכן מוטבים: ${benefNo.map(a=>esc(nm(a))).join(', ')}.`]);
+  const benefUnk=L.filter(a=>(isSv(a)||TYPES[a.type].benef)&&!a.benef); if(benefUnk.length) al.push([1,`לא ידוע אם המוטבים מעודכנים ב-${benefUnk.length} רשומות.`]);
+  const stale=L.filter(a=>monthsSince(a.checked)>12); if(stale.length) al.push([1,`${stale.length} רשומות לא נבדקו בשנה האחרונה (או שלא הוזן תאריך).`]);
+  const soon=ins.filter(a=>a.renewal&&monthsSince(a.renewal)>-2&&monthsSince(a.renewal)<=0); soon.forEach(a=>al.push([1,`${esc(nm(a))} מתחדש ב-${fmtDate(a.renewal)}. זמן טוב להשוות מחיר.`]));
+  al.sort((x,y)=>y[0]-x[0]);
+
+  /* breakdown by type */
+  const by={}; sv.forEach(a=>{const b=num(a.balance)||0; if(b>0) by[a.type]=(by[a.type]||0)+b});
+  const rows=Object.entries(by).sort((a,b)=>b[1]-a[1]); const max=rows.length?rows[0][1]:1;
+
+  const fee=a=>{const g=feeGrade(a); return g==null?'':`<span class="${FEE_CLS[g]}">${FEE_TXT[g]}</span>`};
+  const tbl=(arr,svMode)=>`<div class="table-wrap"><table><tr><th>סוג</th><th>חברה</th><th>סטטוס</th>${svMode?'<th>צבירה</th><th>הפקדה</th><th>דמי ניהול</th><th>מסלול</th>':'<th>פרמיה</th><th>כיסוי</th><th>חידוש</th>'}<th>מוטבים</th><th>נבדק</th></tr>${arr.map(a=>`<tr><td>${esc(TYPES[a.type].n)}</td><td>${esc(a.provider)}</td><td><span class="st ${esc(a.status)}" style="margin:0">${STATUS[a.status]}</span></td>${svMode?`<td class="num">${num(a.balance)!=null?ils(+a.balance):'—'}</td><td class="num">${num(a.monthly)!=null?ils(+a.monthly):'—'}</td><td>${fee(a)||'—'}</td><td>${esc(a.track)||'—'}</td>`:`<td class="num">${num(a.monthly)!=null?ils(+a.monthly):'—'}</td><td>${esc(a.coverage)||'—'}</td><td class="num">${fmtDate(a.renewal)||'—'}</td>`}<td>${a.benef==='yes'?'מעודכנים':a.benef==='no'?'<span class="fee-h">לעדכן</span>':'—'}</td><td class="num">${fmtDate(a.checked)||'—'}</td></tr>`).join('')}</table></div>`;
+
+  $('sumBody').innerHTML=`
+  <div class="kpis">
+    <div class="kpi"><div class="k">סך החיסכון</div><div class="v">${ils(bal)}</div><div class="s">ב-${sv.length} קופות</div></div>
+    <div class="kpi"><div class="k">הפקדות חודשיות</div><div class="v">${ils(dep)}</div><div class="s">לקופות פעילות</div></div>
+    <div class="kpi"><div class="k">פרמיות ביטוח</div><div class="v">${ils(prem)}</div><div class="s">בחודש · ${ils(prem*12)} בשנה</div></div>
+    <div class="kpi"><div class="k">דורש טיפול</div><div class="v">${al.filter(x=>x[0]===2).length+todos.length}</div><div class="s">${al.length} התראות · ${todos.length} משימות</div></div>
+  </div>
+
+  ${rows.length?`<h2>איפה החיסכון נמצא</h2><div class="card"><div class="hbars" role="list">${rows.map(([k,v])=>`<div class="hb" role="listitem"><span class="lab">${esc(TYPES[k].n)}</span><div class="track"><div class="fill" style="width:${Math.max(1,v/max*100)}%"></div></div><span class="num">${ils(v)}</span><span class="tipx">${Math.round(v/bal*100)}% מסך החיסכון</span></div>`).join('')}</div></div>`:''}
+
+  <h2>מה דורש תשומת לב</h2>
+  ${al.length?al.map(([l,t])=>`<div class="alert ${l===2?'high':'mid'}"><span class="ic" aria-hidden="true">!</span><span><span class="lv">${l===2?'חשוב':'לבדוק'}</span>${t}</span></div>`).join(''):'<div class="alert ok"><span class="ic" aria-hidden="true">✓</span><span><span class="lv">תקין</span>לא נמצאו בעיות לפי מה שהוזן.</span></div>'}
+
+  ${todos.length?`<h2>משימות פתוחות</h2><div class="card">${todos.map(a=>`<label class="ck"><input type="checkbox" data-done="${a.id}"><span><span class="t">${esc(a.action)}</span><br><span class="d">${esc(nm(a))}</span></span></label>`).join('')}<p class="mini" style="margin:10px 0 0">סימון מוחק את המשימה מהרשומה ומעדכן את תאריך הבדיקה להיום.</p></div>`:''}
+
+  ${sv.length?`<h2>חיסכון</h2>${tbl(sv,true)}`:''}
+  ${ins.length?`<h2>ביטוחים</h2>${tbl(ins,false)}`:''}
+  <p class="mini">${(()=>{const t=Math.max(0,...accts.map(a=>+new Date(a.updated||0)||0));return t?'עודכן לאחרונה: '+new Date(t).toLocaleDateString('he-IL')+'. ':''})()}רשומות שסומנו "נסגר" לא נכללות בסיכום.</p>`;
+}
+$('sumBody').addEventListener('change',e=>{
+  const id=e.target.dataset.done; if(!id) return; const a=accts.find(x=>x.id===id); if(!a) return;
+  a.action=''; a.checked=new Date().toISOString().slice(0,10); a.updated=new Date().toISOString(); aSave(); renderAccts(); renderSummary();
+});
+$('printBtn').addEventListener('click',()=>window.print());
+window.addEventListener('hashchange',()=>{if(location.hash==='#summary')renderSummary()});
+renderAccts(); renderSummary();
+
+const ITEMS=[
+ ['לבדוק את כל הקופות במסלקה הפנסיונית','צבירה, דמי ניהול, מסלול השקעה וכיסויים.'],
+ ['להשוות את התלוש לדוח השנתי','אחוזי הפקדה, שכר מבוטח וחודשים חסרים.'],
+ ['לאחד קרנות פנסיה לא פעילות','להעביר את הכסף לקרן הפעילה ולחסוך דמי ניהול כפולים.'],
+ ['לבדוק ולהתמקח על דמי הניהול','מול הקרן ישירות, או לבקש מהמעסיק את ההסכם הקבוצתי.'],
+ ['לוודא שמסלול ההשקעה מתאים','לגיל, לטווח הזמן ולרמת הסיכון, במבט על כל התיק יחד.'],
+ ['לבדוק את מסלול הביטוח בקרן הפנסיה','שכיסוי הנכות והשארים מתאים למצב המשפחתי.'],
+ ['לעבור על הר הביטוח','לחפש כפילויות ופוליסות שכבר לא רלוונטיות.'],
+ ['לבדוק את הר הכסף','גם עבור הורים או קרובים שנפטרו.'],
+ ['לעדכן מוטבים','בפנסיה, בהשתלמות ובביטוח החיים.'],
+ ['לבדוק זכאות להחזר מס','על 6 השנים האחרונות.'],
+ ['לבדוק חוב בביטוח לאומי','במיוחד אחרי תקופה בלי עבודה או בחו"ל.'],
+ ['להשוות ביטוח משכנתא ורכב','מחירים משתנים, ושווה לבדוק כל שנה-שנתיים.']
+];
+const KEY='pension-guide-checks-v2';
+function load(){try{return JSON.parse(localStorage.getItem(KEY))||{}}catch(e){return{}}}
+function save(s){try{localStorage.setItem(KEY,JSON.stringify(s))}catch(e){}}
+let state=load();
+function renderChecks(){
+  $('checks').innerHTML=ITEMS.map((it,i)=>`<label class="ck${state[i]?' done':''}"><input type="checkbox" data-i="${i}"${state[i]?' checked':''}><span><span class="t">${it[0]}</span><br><span class="d">${it[1]}</span></span></label>`).join('');
+  const n=ITEMS.filter((_,i)=>state[i]).length;
+  $('prog').textContent=n+' מתוך '+ITEMS.length+' בוצעו';
+  $('barFill').style.width=Math.round(n/ITEMS.length*100)+'%';
+}
+$('checks').addEventListener('change',e=>{const i=e.target.dataset.i;if(i==null)return;state[i]=e.target.checked;save(state);renderChecks()});
+$('reset').addEventListener('click',()=>{state={};save(state);renderChecks()});
+renderChecks();
+</script>
+</body>
+</html>
